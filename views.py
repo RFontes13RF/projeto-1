@@ -9,3 +9,7 @@ def index():
     notes = '\n'.join(notes_li)
 
     return load_template('index.html').format(notes=notes)
+
+def submit(titulo, detalhes):
+    nova_anotacao = {'titulo': titulo,'detalhes': detalhes}
+    
