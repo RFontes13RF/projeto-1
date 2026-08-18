@@ -1,4 +1,4 @@
-from utils import load_data, load_template
+from utils import load_data, load_template,add_anotacao
 
 def index():
     note_template = load_template('components/note.html')
@@ -12,4 +12,4 @@ def index():
 
 def submit(titulo, detalhes):
     nova_anotacao = {'titulo': titulo,'detalhes': detalhes}
-    
+    return add_anotacao('notes.json', nova_anotacao)
