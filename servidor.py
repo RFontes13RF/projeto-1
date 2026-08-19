@@ -1,5 +1,6 @@
 from flask import Flask, render_template_string, request, redirect
 import views
+from utils import cria_tabela
 
 
 app = Flask(__name__)
@@ -21,4 +22,5 @@ def submit_form():
     return redirect('/')
 
 if __name__ == '__main__':
+    cria_tabela('banco.db')
     app.run(debug=True)

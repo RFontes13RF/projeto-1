@@ -1,0 +1,134 @@
+/* Configuração geral da página */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+    background-color: #d8caca;
+    color: #f6f4f4;
+}
+
+
+/* Logo */
+body > img {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+}
+
+
+/* Frase abaixo do logo */
+body > p {
+    text-align: center;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+
+/* Formulário */
+form {
+    max-width: 500px;
+    margin: 0 auto 40px auto;
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    background-color: rgb(58, 50, 50);
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(209, 0, 0, 0.1);
+}
+
+
+/* Títulos dos campos */
+label {
+    font-weight: bold;
+}
+
+
+/* Campos de texto */
+input {
+    padding: 10px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+    font-size: 16px;
+}
+
+
+/* Quando o usuário clica no campo */
+input:focus {
+    outline: none;
+    border-color: #e5b936;
+}
+
+
+/* Botão de enviar */
+input[type="submit"] {
+    margin-top: 10px;
+
+    background-color: #f3cd5e;
+    border: none;
+
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* Quando o mouse passa pelo botão */
+input[type="submit"]:hover {
+    background-color: #edbf37;
+}
+
+
+/* Lista que contém as anotações */
+ul {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+
+    list-style: none;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+
+/* Cada anotação */
+li {
+    min-height: 150px;
+    padding: 20px;
+
+    background-color: #373735;
+
+    border-radius: 5px;
+
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.15);
+
+    transition: transform 0.2s;
+}
+
+
+/* Efeito quando o mouse passa pela anotação */
+li:hover {
+    transform: translateY(-5px);
+}
+
+
+/* Título da anotação */
+li h3 {
+    margin-top: 0;
+}
+
+
+/* Texto da anotação */
+li p {
+    line-height: 1.5;
+}
