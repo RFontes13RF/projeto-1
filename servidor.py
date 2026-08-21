@@ -21,6 +21,12 @@ def submit_form():
     views.submit(titulo, detalhes)
     return redirect('/')
 
+@app.route('/delete/<int:id_anotacao>/')
+def delete(id_anotacao):
+    views.delete(id_anotacao)
+    return redirect('/')
+    
+
 if __name__ == '__main__':
     cria_tabela('banco.db')
     app.run(debug=True)

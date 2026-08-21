@@ -8,7 +8,7 @@ def conecta_banco(nome_arquivo):
 def load_data(nome_arquivo):
     conexao = conecta_banco(nome_arquivo)
     cursor = conexao.cursor()
-    cursor.execute("SELECT title, content FROM note")
+    cursor.execute("SELECT id, title, content FROM note")
     dados = cursor.fetchall()
     conexao.close()
     return dados
@@ -36,9 +36,13 @@ def add_anotacao(nome_arquivo, titulo, detalhes):
     conexao = conecta_banco(nome_arquivo)
     cursor = conexao.cursor()
 
-    cursor.execute(
-        "INSERT INTO note (title, content) VALUES (?, ?)",
-        (titulo, detalhes)
-    )
+    cursor.execute("INSERT INTO note (title, content) VALUES (?, ?)",(titulo, detalhes))
+    conexao.commit()
+    conexao.close()
+
+def apaga_anotacao(nome_arquivo, id_anotacao):
+    conexao = conecta_banco(nome_arquivo)
+    cursor = conexao.cursor()
+    cursor.execute("DELETE from note WHERE id = ?",(id_anotacao,))
     conexao.commit()
     conexao.close()
