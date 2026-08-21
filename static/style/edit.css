@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+
+    background-color: #d8caca;
+    color: #ffffff;
+}
+
+.edit-container {
+    width: 90%;
+    max-width: 600px;
+
+    padding: 35px;
+
+    background-color: #3a3232;
+
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+}
+
+.edit-container h1 {
+    margin-top: 0;
+    margin-bottom: 25px;
+
+    text-align: center;
+
+    color: #ffffff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+input,
+textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #cccccc;
+    border-radius: 7px;
+
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+
+    background-color: #ffffff;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+
+    border-color: #f3cd5e;
+
+    box-shadow: 0 0 0 2px rgba(243, 205, 94, 0.2);
+}
+
+textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.edit-actions {
+    display: flex;
+    gap: 12px;
+
+    margin-top: 15px;
+}
+
+.save-button,
+.cancel-button {
+    flex: 1;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    text-align: center;
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.save-button {
+    background-color: #f3cd5e;
+    color: #222222;
+}
+
+.save-button:hover {
+    background-color: #edbf37;
+}
+
+.cancel-button {
+    background-color: #625757;
+    color: #ffffff;
+}
+
+.cancel-button:hover {
+    background-color: #766969;
+}

@@ -46,3 +46,18 @@ def apaga_anotacao(nome_arquivo, id_anotacao):
     cursor.execute("DELETE from note WHERE id = ?",(id_anotacao,))
     conexao.commit()
     conexao.close()
+
+def busca_anotacao(nome_arquivo, id_anotacao):
+    conexao = conecta_banco(nome_arquivo)
+    cursor = conexao.cursor()
+    cursor.execute("SELECT id, title, content FROM note WHERE id = ?",(id_anotacao,))
+    anotacao = cursor.fetchone()
+    conexao.close()
+    return anotacao
+
+def edita_anotacao(nome_arquivo, titulo, conteudo, id_anotacao):
+    conexao = conecta_banco(nome_arquivo)
+    cursor = conexao.cursor()
+    cursor.execute("UPDATE note SET title = ?, content = ? WHERE id = ?",(titulo, conteudo, id_anotacao))
+    conexao.commit()
+    conexao.close()

@@ -25,6 +25,18 @@ def submit_form():
 def delete(id_anotacao):
     views.delete(id_anotacao)
     return redirect('/')
+
+@app.route('/update/<int:id_anotacao>/')
+def update(id_anotacao):
+    return render_template_string(views.editar(id_anotacao))
+
+@app.route('/update', methods=['POST'])
+def update_submit():
+    id_anotacao = request.form.get('id')
+    titulo = request.form.get('titulo')
+    detalhes = request.form.get('detalhes')
+    views.salvar_edicao(titulo, detalhes, id_anotacao)
+    return redirect('/')
     
 
 if __name__ == '__main__':
